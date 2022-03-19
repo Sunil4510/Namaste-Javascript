@@ -30,3 +30,13 @@ b();
  x(function(){
      console.log("First class Function");
  })
+
+
+//callback in event listener 
+function attch(){
+    let count=0;
+    document.getElementById("clickme").addEventListener("click", function(){
+        console.log("Button Clicked",++count);
+    })
+}
+attch();
