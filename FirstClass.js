@@ -77,3 +77,17 @@ const calculate = function(radius,logic){
     return output;
 }
 console.log(calculate(radius,area));
+
+//now to calculate circumference we just need to create a function logic only just like above area function
+//now we dont need to repeat they code like loop,declaring variables etc.,
+//Circumference logic = 2*pi*r;
+const circumference = (radius)=>{
+    return 2*Math.PI*radius;
+}
+console.log(calculate(radius,circumference));
+
+//now to get diameter just needs to create logic function
+const diameter = (radius)=>{
+    return 2*radius;
+}
+console.log(calculate(radius,diameter));
