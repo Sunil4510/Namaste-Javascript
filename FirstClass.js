@@ -40,3 +40,40 @@ function attch(){
     })
 }
 attch();
+
+//setTimeout trust issues
+console.log("start");
+setTimeout(function(){
+    console.log("callback")
+},5000)
+console.log("end");
+
+//Higher order function
+//DRY principle dont repeat yourself 
+
+//calculate the area
+//bad way of writing they code->
+//Not acheiving dry principle
+const radius = [3,1,2,4];
+const calculateArea = function(radius){
+    const output = [];
+    for(let i=0; i<radius.length; i++){
+        output.push(radius[i]*radius[i]*Math.PI);
+    }
+    return output;
+}
+console.log(calculateArea(radius));
+
+//Good way of writing they code->
+//acheiving DRY principle 
+const area = function(radius){
+    return radius*radius*Math.PI
+} 
+const calculate = function(radius,logic){
+    const output = [];
+    for(let i=0; i<radius.length; i++){
+        output.push(logic(radius[i]))        
+    }
+    return output;
+}
+console.log(calculate(radius,area));
