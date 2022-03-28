@@ -91,3 +91,20 @@ const diameter = (radius)=>{
     return 2*radius;
 }
 console.log(calculate(radius,diameter));
+
+//now we can use map directly see how
+//with this line you dont need to write calculate function also 
+//calculate function is just like map which attached our callback or
+//function which is passed as parameter to the radius array to
+// get they desired results 
+console.log(radius.map(area))
+//to use calculate just like map, we need to use prototype in js 
+//let us see how 
+Array.prototype.calculates = function(logic){
+    const output = []; 
+    for(let i=0; i<this.length; i++){
+        output.push(logic(this[i]))
+    }
+    return output;
+} 
+console.log(radius.calculates(area)) 
