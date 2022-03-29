@@ -108,3 +108,7 @@ Array.prototype.calculates = function(logic){
     return output;
 } 
 console.log(radius.calculates(area)) 
+
+const object2 ={
+    name:"sunil"
+}
